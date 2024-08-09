@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form {
+            font-family: Arial;
+            background-color: #dddddd;
+        }
+        label{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form action="abc" method="post">
+    <h2>What do you want to buy?</h2>
+    <select>
+        <option value="Hand Bag">Hand Bag</option>
+        <option value="Shrit">Shrit</option>
+        <option value="Pant">Pant</option>
+    </select>
+    <br>
+    <h2>How many do you want to buy?</h2>
+    <label><input type="radio" name="buy" value="buy1">1-10$</label><br>
+    <label><input type="radio" name="buy" value="buy2">1-10$</label><br>
+    <label><input type="radio" name="buy" value="buy2">1-10$</label>
+    <h2>Name *</h2>
+    <input type="text" placeholder="Enter first name"><input type="text" placeholder="Enter last name">
+    <h2>Email *</h2>
+    <input type="text" placeholder="Enter your email">
+    <h2>Phonenumber *</h2>
+    <input type="number"> - <input type="number"> - <input type="number"> <br>
+    <input type="submit" name="submit">
+</form>
+
+<br><br><br><br><br><br>
+
+<form>
+    <h1 style="text-align: center">SỞ THÍCH CỦA BẠN</h1>
+<p style="color:#7deb34 ">Họ và tên:</p><input type="text" name="name">
+    <p style="color:#7deb34 ">Email:</p>  <input type="text" name="email">
+    <p style="color:#7deb34 ">Sở thích:</p>
+    <tr>
+        <td><label><input type="checkbox" name="like" value="Sport"> Thể Thao</label></td>
+        <td><label><input type="checkbox" name="like" value="Music"> Nhạc</label></td>
+        <td><label><input type="checkbox" name="like" value="Read"> Đọc</label></td>
+    </tr>
+    <br>
+    <tr>
+        <td><label><input type="checkbox" name="like" value="SeachWeb"> Lướt web</label></td>
+        <td><label><input type="checkbox" name="like" value="Game"> Play Game</label></td>
+        <td><label><input type="checkbox" name="like" value="Movies"> Phim</label></td>
+    </tr>
+    <br>
+    <input type="submit" value="submit">
+    <input type="reset" value="reset">
+</form>
+
+<br><br><br><br><br><br>
+
+
+</body>
+</html>
