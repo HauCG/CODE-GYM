@@ -4,15 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onchange Event with Radio Buttons</title>
-    <script>
-        function handleRadioChange(event) {
-            const selectedValue = event.target.value;
-            document.getElementById('result').innerText = `You selected: ${selectedValue}`;
-        }
-    </script>
 </head>
 <body>
 <h2>Select your favorite fruit:</h2>
+
 <label>
     <input type="radio" name="fruit" value="Apple" onchange="handleRadioChange(event)"> Apple
 </label>
@@ -24,5 +19,12 @@
 </label>
 
 <p id="result">You selected: </p>
+
+<script>
+    function handleRadioChange(event) {
+        const selectedValue = event.target.value;
+        document.getElementById('result').innerText = `You selected: ${selectedValue}`;
+    }
+</script>
 </body>
 </html>

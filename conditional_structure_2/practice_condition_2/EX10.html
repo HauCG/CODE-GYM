@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electricity price calculation</title>
+</head>
+<body>
+<script>
+  let a = +prompt("Enter the kWh");
+  let c = "";
+  if (a <= 50 ) {
+      c = 1.866 * a;
+  } else if (a <= 200) {
+      c = 2.167 * a;
+  } else if (a <= 300) {
+      c = 2.729 * a;
+  } else if (a <= 400) {
+      c = 3.050 * a;
+  } else {
+      c = 3.151 * a;
+  }
+  alert(c);
+</script>
+</body>
+</html>

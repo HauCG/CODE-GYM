@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>o doi oi</title>
+    <style>
+        input {
+            width: 170px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+<input type="number" id="year1" min="0" max="2024" placeholder="Nhập năm sinh bạn nam">
+<input type="number" id="year2" min="0" max="2024" placeholder="Nhập năm sinh bạn nữ">
+<input type="button" value="Kiểm tra hợp" onclick="check()">
+<p id="showResult"></p>
+<script>
+    function check() {
+        let a = +document.getElementById("year1").value;
+        let b = +document.getElementById("year2").value;
+        let c = (a - 4) % 12;
+        let d = (b - 4) % 12;
+        let e = (a - 4) % 10;
+        let f = (b - 4) % 10;
+        let chiMen = "";
+        let chiWoman = "";
+        let MenAges = "";
+        let WomanAges = "";
+        let resilt = "";
+        switch (c) {
+            case 0:
+                MenAges = "Tý";
+                break;
+            case 1:
+                MenAges = "Sửu";
+                break;
+            case 2:
+                MenAges = "Dần";
+                break;
+            case 3:
+                MenAges = "Mão";
+                break;
+            case 4:
+                MenAges = "Thìn";
+                break;
+            case 5:
+                MenAges = "Tỵ";
+                break;
+            case 6:
+                MenAges = "Ngọ";
+                break;
+            case 7:
+                MenAges = "Mùi";
+                break;
+            case 8:
+                MenAges = "Thân";
+                break;
+            case 9:
+                MenAges = "Dậu";
+                break;
+            case 10:
+                MenAges = "Tuất";
+                break;
+            case 11:
+                MenAges = "Hợi";
+                break;
+        }
+
+        switch (d) {
+            case 0:
+                WomanAges = "Tý";
+                break;
+            case 1:
+                WomanAges = "Sửu";
+                break;
+            case 2:
+                WomanAges = "Dần";
+                break;
+            case 3:
+                WomanAges = "Mão";
+                break;
+            case 4:
+                WomanAges = "Thìn";
+                break;
+            case 5:
+                WomanAges = "Tỵ";
+                break;
+            case 6:
+                WomanAges = "Ngọ";
+                break;
+            case 7:
+                WomanAges = "Mùi";
+                break;
+            case 8:
+                WomanAges = "Thân";
+                break;
+            case 9:
+                WomanAges = "Dậu";
+                break;
+            case 10:
+                WomanAges = "Tuất";
+                break;
+            case 11:
+                WomanAges = "Hợi";
+                break;
+        }
+        switch (e) {
+            case 0:
+                chiMen = "Giáp";
+                break;
+            case 1:
+                chiMen = "Ất";
+                break;
+            case 2:
+                chiMen = "Bính";
+                break;
+            case 3:
+                chiMen = "Đinh";
+                break;
+            case 4:
+                chiMen = "Mậu";
+                break;
+            case 5:
+                chiMen = "Kỷ";
+                break;
+            case 6:
+                chiMen = "Canh";
+                break;
+            case 7:
+                chiMen = "Tân";
+                break;
+            case 8:
+                chiMen = "Nhâm";
+                break;
+            case 9:
+                chiMen = "Quý";
+                break;
+        }
+        switch (f) {
+            case 0:
+                chiWoman = "Giáp";
+                break;
+            case 1:
+                chiWoman = "Ất";
+                break;
+            case 2:
+                chiWoman = "Bính";
+                break;
+            case 3:
+                chiWoman = "Đinh";
+                break;
+            case 4:
+                chiWoman = "Mậu";
+                break;
+            case 5:
+                chiWoman = "Kỷ";
+                break;
+            case 6:
+                chiWoman = "Canh";
+                break;
+            case 7:
+                chiWoman = "Tân";
+                break;
+            case 8:
+                chiWoman = "Nhâm";
+                break;
+            case 9:
+                chiWoman = "Quý";
+                break;
+        }
+        if ((MenAges === "Dần" && (WomanAges === "Thân" || WomanAges === "Tỵ" || WomanAges === "Hợi")) ||
+            (MenAges === "Thân" && (WomanAges === "Dần" || WomanAges === "Tỵ" || WomanAges === "Hợi")) ||
+            (MenAges === "Tỵ" && (WomanAges === "Dần" || WomanAges === "Thân" || WomanAges === "Hợi")) ||
+            (MenAges === "Hợi" && (WomanAges === "Dần" || WomanAges === "Thân" || WomanAges === "Tỵ"))) {
+            result = "Không hợp bỏ nhau đi";
+        } else {
+            result = "Quá hợp cưới nhau đi";
+        }
+        let m = "Tuổi của nam là " + chiMen + " " + MenAges + "<br>"
+            + "Tuổi của nữ là " + chiWoman + " " + WomanAges + "<br>"
+            + result;
+        document.getElementById("showResult").innerHTML = m;
+    }
+</script>
+</body>
+</html>

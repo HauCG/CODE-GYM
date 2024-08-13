@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Year</title>
+</head>
+<body>
+<script>
+    let year = +prompt("Enter the year to check:");
+    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+        alert("Leap Year");
+    } else {
+        alert("Not a Leap Year");
+    }
+</script>
+</body>
+</html>
