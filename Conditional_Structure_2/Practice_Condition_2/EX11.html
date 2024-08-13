@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal_income_tax</title>
+</head>
+<Body>
+<script>
+    let a = +prompt("Enter your salary");
+    if (a <= 5000000 ) {
+        let b = a / 100 * 5;
+        alert(b);
+    } else if (a < 10000000) {
+        let c = a / 100 * 10 + 250000;
+        alert(c);
+    } else if (a < 18000000) {
+        let d = a / 100 * 15 + 750000;
+        alert(d);
+    } else if (a < 32000000) {
+        let e = a / 100 * 20 + 1950000;
+        alert(e);
+    } else if (a < 52000000) {
+        let f = a / 100 * 25 + 3250000;
+        alert(f);
+    } else if (a < 80000000) {
+        let g = a / 100 * 30 + 5850000;
+        alert(g);
+    } else {
+        let h = a / 100 * 35 + 18150000;
+        alert(h);
+    };
+</script>
+</Body>
+</html>

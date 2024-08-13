@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Move Image</title>
+    <style>
+        #dora {
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body onload="docReady()">
+<img id="dora" src="img_1.png" style="position:absolute;left:0; top:0;" height="100" width="80"/>
+<script>
+    function goUp() {
+        let d = document.getElementById("dora");
+        d.style.top = (parseInt(d.style.top) - 5) + 'px';
+    }
+
+    function goDown() {
+        let d = document.getElementById("dora");
+        d.style.top = (parseInt(d.style.top) + 5) + 'px';
+    }
+
+    function goLeft() {
+        let d = document.getElementById("dora");
+        d.style.left = (parseInt(d.style.left) - 5) + 'px';
+    }
+
+    function goRight() {
+        let d = document.getElementById("dora");
+        d.style.left = (parseInt(d.style.left) + 5) + 'px';
+    }
+
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 38:
+                goUp();
+                break;
+            case 40:
+                goDown();
+                break;
+            case 37:
+                goLeft();
+                break;
+            case 39:
+                goRight();
+                break;
+        }
+    }
+
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+</script>
+</body>
+</html>

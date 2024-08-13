@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Example</title>
+</head>
+<body>
+<label>
+    <input type="checkbox" id="good"> Good
+    <br>
+    <input type="checkbox" id="cheap"> Cheap
+    <br>
+    <input type="checkbox" id="fast"> Fast
+</label>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let good = false;
+        let cheap = false;
+        let fast = false;
+        const goodCheckbox = document.getElementById("good");
+        const cheapCheckbox = document.getElementById("cheap");
+        const fastCheckbox = document.getElementById("fast");
+
+        goodCheckbox.addEventListener("click", function() {
+            good = goodCheckbox.checked;
+            if (good && fast && cheap) {
+                fast = false;
+                fastCheckbox.checked = false;
+            }
+        });
+
+        cheapCheckbox.addEventListener("click", function() {
+            cheap = cheapCheckbox.checked;
+            if (cheap && fast && good) {
+                good = false;
+                goodCheckbox.checked = false;
+            }
+        });
+
+        fastCheckbox.addEventListener("click", function() {
+            fast = fastCheckbox.checked;
+            if (fast && cheap && good) {
+                cheap = false;
+                cheapCheckbox.checked = false;
+            }
+        });
+    });
+</script>
+</body>
+</html>

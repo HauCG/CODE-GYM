@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check how many days of the months</title>
+</head>
+<body>
+<script>
+    let months = +prompt("Enter the month");
+    debugger;
+    switch (months) {
+        case 1:
+            document.write(31 + "Days");
+            break;
+        case 3:
+            document.write(31 + "Days");
+            break;
+        case 5:
+            document.write(31 + "Days");
+            break;
+        case 7:
+            document.write(31 + "Days");
+            break;
+        case 8:
+            document.write(31 + "Days");
+            break;
+        case 10:
+            document.write(31 + "Days");
+            break;
+        case 12:
+            document.write(31 + "Days");
+            break;
+        case 4:
+            document.write(30 + "Days");
+            break;
+        case 6:
+            document.write(30 + "Days");
+            break;
+        case 11:
+            document.write(30 + "Days");
+            break;
+        case 2:
+            if (confirm("Is that in a leap year")) {
+                alert("28 days");
+            } else {
+                alert("27 days");
+            }
+            break;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onchange Event with Radio Buttons</title>
+    <script>
+        function handleRadioChange(event) {
+            const selectedValue = event.target.value;
+            document.getElementById('result').innerText = `You selected: ${selectedValue}`;
+        }
+    </script>
+</head>
+<body>
+<h2>Select your favorite fruit:</h2>
+<label>
+    <input type="radio" name="fruit" value="Apple" onchange="handleRadioChange(event)"> Apple
+</label>
+<label>
+    <input type="radio" name="fruit" value="Banana" onchange="handleRadioChange(event)"> Banana
+</label>
+<label>
+    <input type="radio" name="fruit" value="Cherry" onchange="handleRadioChange(event)"> Cherry
+</label>
+
+<p id="result">You selected: </p>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>check passwords</title>
+</head>
+<body>
+<script>
+    let a = prompt("Enter your role");
+    if (!a) {
+        alert("canceled");
+    } else if (a !== "admin") {
+        alert("I don’t know you");
+    }
+    else {
+        let b = prompt("Enter the passwords");
+        if (b === null) {
+            alert("canceled");
+        } else if (!b) {
+            alert("Wrong password")
+        } else {
+            alert("Welcome");
+        }
+    }
+</script>
+</body>
+</html>

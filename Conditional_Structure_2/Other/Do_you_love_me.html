@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #move {
+            position: absolute;
+            left: 150;
+            top: 80px;
+        }
+    </style>
+</head>
+<body>
+<h1>Do youo love me ?</h1>
+<input type="button" value="Yes" onclick="sayYes()">
+<input id="move" type="button" value="No" onmouseover="moveNo()">
+<script>
+    function sayYes() {
+        alert("I know that bae :3");
+    }
+    function moveNo() {
+        let obj = document.getElementById("move");// lay doi tuong
+        //lay vi tri ben trai cua doi tuong
+        let currentLeft = parseInt(window.getComputedStyle(obj).left);
+        let currentTop = parseInt(window.getComputedStyle(obj).top);
+        // tao vi tri moi cho doi tuong
+        let newLeft = currentLeft + (Math.random() * -50) + 50;
+        let newTop = currentTop + (Math.random() * -50) + 50;
+        // cap nhat lai vi tri cua doi tuong
+        obj.style.left = newLeft + 'px';
+        obj.style.top = newTop + 'px';
+    }
+</script>
+</body>
+</html>

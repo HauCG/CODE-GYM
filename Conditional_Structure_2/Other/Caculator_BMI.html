@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Enter your weight by kg");
+    let b = +prompt("Enter your height by meter");
+    let c = a / ( b ^ 2 );
+    if ( c < 18.5 ){
+        alert("Under weight")
+    } else if ( c < 25 ){
+        alert("Normar");
+    } else if ( c < 30 ){
+        alert("Over weight");
+    } else {
+        alert("Obese")
+    }
+</script>
+</body>
+</html>

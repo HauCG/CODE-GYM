@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+    <input type="text" id="view"><br><br>
+<!--onclick="inputValue(this.value) : truyền giá trị của nút bấm vào hàm inputValue-->
+    <table>
+        <tr>
+            <td><button type="button" name="op" value ="+"onclick="inputValue(this.value)"> + </button></td>
+            <td><button type="button" name="op" value ="-"onclick="inputValue(this.value)"> - </button></td>
+            <td><button type="button" name="op" value ="/"onclick="inputValue(this.value)"> / </button></td>
+            <td><button type="button" name="op" value ="*"onclick="inputValue(this.value)"> * </button></td>
+            <td><button  name= "reusult" onclick="result();"> = </button></td>
+        </tr>
+        <tr>
+            <td><button type="button" name="btn" value ="0"  onclick="inputValue(this.value)"> 0 </button></td>
+            <td><button type="button" name="btn" value ="1" onclick="inputValue(this.value)"> 1 </button></td>
+            <td><button type="button" name="btn" value ="2" onclick="inputValue(this.value)"> 2 </button></td>
+            <td><button type="button" name="btn" value ="3"  onclick="inputValue(this.value)"> 3 </button></td>
+            <td><button type="button" name="btn" value ="3"  onclick="inputValue(this.value)"> 4 </button></td>
+        </tr>
+        <tr>
+            <td><button type="button" name="btn" value ="1" onclick="inputValue(this.value)"> 5 </button></td>
+            <td><button type="button" name="btn" value ="2" onclick="inputValue(this.value)"> 6 </button></td>
+            <td><button type="button" name="btn" value ="3"  onclick="inputValue(this.value)"> 7 </button></td>
+            <td><button type="button" name="btn" value ="3"  onclick="inputValue(this.value)"> 8 </button></td>
+            <td><button type="button" name="btn" value ="3"  onclick="inputValue(this.value)"> 9 </button></td>
+            <td rowspan="4"> <button type="button" onclick="clear();"> AC</button></td></td>
+        </tr>
+    </table>
+<script>
+    let view = document.getElementById("view");
+    // tạo biến để lưu các số tham chiếu (ô kết quả)
+    function inputValue(value) {
+        view.value += value;
+        // hàm nhận tham số value và thêm vào view
+    }
+    function result() {
+        let result = eval(view.value);
+        view.value = result;
+        // hàm eval để máy tính nghĩ chuỗi thành một biểu thức
+    }
+    function clear() {
+        view.value="";
+        //  gan cho chuoi thanh chuoi rong
+    }
+</script>
+</body>
+</html>
