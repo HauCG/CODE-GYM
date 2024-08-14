@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>[1, 2, 3, 4]</p><br>
+<p id="ans1"></p><br>
+<pre>name: "Alice", age: 25, city: "Hà Nội"</pre><br>
+<p id="ans2"></p><br>
+<p>[1, 2, 3, 4, 5]</p><br>
+<p id="ans3"></p><br>
+<script>
+    //for of
+    const array = "co d egym";
+    for (const a in array) {
+        document.getElementById("ans1").innerText = a ;
+    }
+
+    //for in
+    const person = {
+        name: "Alice",
+        age: 25,
+        city: "Hà Nội"
+    };
+    let key  = '';
+    for (const b in person) {
+        key += b;
+    }
+    document.getElementById("ans2").innerText = key ;
+
+
+    //for each
+    let array = [1, 2, 3, 4, 5];
+
+    array.forEach(function(element) {
+        document.getElementById("ans3").innerText = element;
+    });
+</script>
+</body>
+</html>

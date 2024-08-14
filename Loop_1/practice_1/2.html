@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre> Viết chương trình nhập vào một số bất kỳ lớn hơn 0.
+    Tính tổng các phần tử từ 1 đến số vừa nhập vào.</pre>
+<input type="number" min="1" id="number" placeholder="Enter your number" onchange="getSum()">
+<p id="result"></p>
+<script>
+    function getSum() {
+        let sum = 0;
+        let a = document.getElementById("number").value;
+        for (let i = 0; i <= a; i++) {
+            sum += i;
+        }
+        document.getElementById("result").innerText = sum;
+    }
+</script>
+</body>
+</html>
