@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng hàm prompt() để kiểm tra nhiệt độ</title>
+</head>
+<body>
+<script>
+    let temperature = +prompt("Nhập nhiệt độ hiện tại:");
+
+    while (temperature > 100 || temperature < 20) {
+        if (temperature > 100) {
+            temperature = +prompt("Nhiệt độ quá cao! Hãy giảm nhiệt độ:");
+        } else if (temperature < 20) {
+            temperature = +prompt("Nhiệt độ quá thấp! Hãy tăng nhiệt độ:");
+        }
+    }
+    alert("ok");
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!--1. Thiết kế giao diện: Giao diện chỉ gồm 1 Button "Chơi": cho phép người dùng bắt đầu  chơi hoặc chơi lại-->
+
+<!--2. Mô tả ứng dụng: Khi người dùng nhấn vào button “Chơi”:-->
+
+<!--Ứng dụng hiển thị cửa sổ prompt cho phép người dùng nhập vào muốn đoán trong khoảng nào-->
+<!--Ứng dụng chọn ra số ngẫu nhiên trong khoảng mà ngườI dùng chọn-->
+<!--Ứng dụng hiển thị cửa số prompt cho người dùng nhập giá trị mà người dùng đoán-->
+<!--Ứng dụng lấy kết quả và so sánh với giá trị ngẫu nhiên.-->
+<!--Nếu bằng thì hiển thị thông báo chúc mừng và kết thúc lượt chơi-->
+<!--Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay bé thua và cho phép người dùng lựa chọn lại.-->
+<!--Chú ý: Người dùng chỉ được lựa chọn tối đa ba lần-->
+<!--Học viên tham khảo ứng dụng demo tại đây.-->
+<!--Lưu ý: Không sao chép mã nguồn trong phần tham khảo, vì nó được cố ý giữ cho tệ hơn thường lệ.-->
+<!--Để hoàn thành bài thực hành, học viên cần:-->
+
+<!--Đưa mã nguồn lên GitHub-->
+<!--Dán link của repository lên phần nộp bài trên CodeGymX-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hãy thử đoán xem</title>
+</head>
+<body>
+<script>
+    if (confirm("Chơi game đoán số không?")) {
+        let num1 = +prompt("Nhập số đầu tiên trong khoảng bạn muốn đoán!");
+        let num2 = +prompt("Nhập số cuối cùng trong khoảng bạn muốn đoán!");
+        let num3 = Math.floor(Math.random() * num2) + num1;
+        let count = 0;
+        while (count < 4) {
+            let guess = +prompt("Nhập số bạn đoán!");
+            if (guess === num3) {
+                alert("GOODJOB. Bạn đã đoán đúng!");
+                break;
+            } else {
+                count++;
+                if (count < 4) {
+                    alert("Sai rồi! Thử lại.");
+                } else {
+                    alert("Bạn đã hết số lần đoán.");
+                }
+            }
+        }
+    } else {
+        alert("Fuck off");
+    }
+</script>
+</body>
+</html>

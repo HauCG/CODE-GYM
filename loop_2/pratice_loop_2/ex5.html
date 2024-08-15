@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi kép</title>
+</head>
+<body>
+<script>
+    let p = parseFloat(prompt("Nhập số tiền bạn đầu tư ban đầu:"));
+    let r = parseFloat(prompt("Nhập lãi suất hàng năm (%)")) / 100;
+    let n = parseInt(prompt("Nhập số chu kỳ thực hiện lãi kép:"));
+    let a = p;
+    for (let i = 1; i <= n; i++) {
+        a *= (1 + r);
+    }
+    alert("Số tiền bạn nhận được trong tương lai là: " + a );
+</script>
+</body>
+</html>

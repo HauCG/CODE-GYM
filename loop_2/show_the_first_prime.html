@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show first 20 primenums</title>
+</head>
+<body>
+<input type="number" id="a" placeholder="nhap so" onchange="checkAndShowPrime()">
+<script>
+    function checkAndShowPrime() {
+        let a = document.getElementById("a").value;
+        let count = 0;
+        let result = '';
+        let b = 2; // Giả sử b bắt đầu từ 2
+        while (count <= a) {
+            let isPrime = true;
+            for (let i = 2; i < b; i++) {
+                if (b % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                count++;
+                result += b + "<br>";
+            }
+            b++;
+        }
+        document.write(result);
+    }
+
+</script>
+</body>
+</html>

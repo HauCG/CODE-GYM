@@ -6,15 +6,15 @@
 </head>
 <body>
 <script>
-    let a = +prompt("Enter first number");
-    let b = +prompt("Enter second number");
-    let c = +prompt("Enter third number");
+    let num1 = +prompt("Enter first number");
+    let num2 = +prompt("Enter second number");
+    let num3 = +prompt("Enter third number");
 
-    let d = (a > b && a>c ) ? 'The biggest number is first one':
-        (b > a && b>c ) ? 'The biggest number is second one':
+    let result = (num1 > num2 && num1>num3 ) ? 'The biggest number is first one':
+        (num2 > num1 && num2>num3 ) ? 'The biggest number is second one':
             'The biggest number is third one';
 
-    alert(d);
+    alert(result);
 </script>
 </body>
 </html>

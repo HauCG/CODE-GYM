@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In hình chữ nhật</title>
+</head>
+<body>
+<script>
+    let b = +prompt("Nhap do dai canh");
+    let a = +prompt("Nhap do dai canh");
+    for (let i = 1; i <= a ; i++) {
+        if (i == 1 || i == a) {
+            document.write("*".repeat(b) +  "<br>");
+        } else {
+            for (let i = 1; i <= b; i++) {
+                if (i == 1 || i == b) {
+                    document.write("*");
+                } else {
+                    document.write("&nbsp&nbsp");
+                }
+            }
+            document.write("<br>");
+        }
+    }
+</script>
+</body>
+</html>

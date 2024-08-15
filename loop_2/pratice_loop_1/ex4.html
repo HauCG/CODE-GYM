@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First Fibonacci Number Divisible by 5</title>
+</head>
+<body>
+<script>
+  let n1 = 0, n2 = 1, nextTerm;
+  while (true) {
+    if (n1 % 5 === 0 && n1 !== 0) {
+      console.log(n1);
+      break;
+    }
+    nextTerm = n1 + n2;
+    n1 = n2;
+    n2 = nextTerm;
+  }
+</script>
+</body>
+</html>

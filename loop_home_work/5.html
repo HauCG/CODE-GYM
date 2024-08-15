@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In ra ước chung của 2 số a và b (b > a)
+        Các em nộp lại link git nhé</title>
+</head>
+<body>
+<script>
+    let nu1 = parseInt(prompt("Nhập số a"));
+    let nu2 = parseInt(prompt("Nhập số b"));
+    if (nu1 > nu2) {
+        alert("Xin vui lòng nhập lại với b > a");
+    } else {
+        let uocChung = "";
+        let countUocChung = 0;
+        if (nu1 > 0 && nu2 > 0) {
+            for (let i = 1; i <= nu1; i++) {
+                if (nu1 % i === 0 && nu2 % i === 0) {
+                    uocChung += i + "; ";
+                    countUocChung ++;
+                }
+            }
+            if (countUocChung > 0) {
+                alert("Ước chung là :" + uocChung + "  ");
+            } else {
+                alert("2 số ko có ước chung");
+            }
+        } else {
+                alert("Vui long nhap so khac");
+            }
+    }
+</script>
+</body>
+</html>
