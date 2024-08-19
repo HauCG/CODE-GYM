@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creating and manipulating arrays</title>
+</head>
+<body>
+<h2>Thao tác với mảng</h2>
+<input type="text" id="num" placeholder="Nhập số" onchange="add_element_to_array()">
+<p id="res"></p>
+<script>
+    let a = 0;
+    let array = Array();
+    function add_element_to_array() {
+        array[a] = document.getElementById("num").value;
+        a++;
+        let b = "";
+        for (let i = 0; i <= array.length - 1; i++) {
+            b += array[i];
+            document.getElementById("res").innerText = b;
+        }
+    }
+</script>
+</body>
+</html>

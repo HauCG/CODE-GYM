@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
+        Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.</title>
+</head>
+<body>
+<input type="text" id="array" placeholder="Nhập dãy cách nhau dấu ,">
+<input type="button" value="Sắp xếp" onclick="change()">
+<script>
+    function change() {
+        let a = document.getElementById("array").value.split(",").map(Number);
+        for (let i = 0; i < a.length - 1; i++) {
+            for (let j = i + 1 ; j < a.length; j++) {
+                if (a[i] < a[j]) {
+                    let c = a[i];
+                    a[i] = a[j];
+                    a[j] = c;
+                }
+            }
+        }
+        document.write(a);
+    }
+</script>
+</body>
+</html>

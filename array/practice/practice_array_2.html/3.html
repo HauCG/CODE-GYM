@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. Chương trình này đếm số ký tự số trong
+        mảng. </title>
+</head>
+<body>
+<input type="text" id="arr" placeholder="Nhập dãy">
+<input type="button" onclick="check()" value="Kiểm tra">
+<script>
+    function check() {
+
+        let array = document.getElementById("arr").value.split(",");
+        let c = [];
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (isNaN(array[i])) {
+                continue;
+            } else {
+                count++
+                c.push(array[i]);
+            }
+        }
+        document.write("Mảng mới là: " + c + " có " + count +" số.") ;
+
+    }
+</script>
+</body>
+</html>

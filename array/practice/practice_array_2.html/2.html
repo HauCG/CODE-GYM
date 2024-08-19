@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="arr" placeholder="Nhập dãy">
+<input type="button" value="Đảo ngược" onclick="daoNguoc()">
+<script>
+    function daoNguoc() {
+        let array = document.getElementById("arr").value.split(',');
+        for (let i = 0; i < array.length/2; i++) {
+            let c = array[i];
+            array[i] = array[array.length - i - 1];
+            array[array.length - i - 1] = c;
+        }
+        document.write(array);
+    }
+</script>
+</body>
+</html>

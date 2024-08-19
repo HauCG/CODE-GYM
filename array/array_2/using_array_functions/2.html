@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chèn dấu (-) giữa 2 số chẵn</title>
+</head>
+<body>
+<input type="text" id="num" onclick="show()">
+<p id="result"></p>
+<script>
+    function show() {
+        let array = document.getElementById("num").value;
+        let result = [];
+        for (let i =0; i < array.length; i++) {
+            if (array[i] % 2 === 0 && array[i + 1] % 2 === 0) {
+                result += array[i] + "-";
+            } else {
+                result += array[i];
+            }
+        }
+        document.getElementById("result").innerText = result;
+    }
+</script>
+</body>
+</html>

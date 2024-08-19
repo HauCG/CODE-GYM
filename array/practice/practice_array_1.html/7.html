@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra và xóa phần tử trong mảng</title>
+</head>
+<body>
+<input type="text" id="arr" placeholder="Nhập dãy số, cách nhau bằng dấu phẩy">
+<input type="text" id="num" placeholder="Nhập số cần kiểm tra">
+<input type="button" value="Kiểm tra và xóa" onclick="checkAndEx()">
+<p id="res"></p>
+
+<script>
+    function checkAndEx() {
+        let array = document.getElementById("arr").value.split(',').map(Number);
+        let number = parseInt(document.getElementById("num").value);
+        let found = false;
+
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === number) {
+                for (let j = i; j < array.length - 1; j++) {
+                    array[j] = array[j + 1];
+                }
+                array[array.length - 1] = 0;
+                found = true;
+                break;
+            }
+        }
+        if (found) {
+            document.getElementById("res").innerText = array.join(', ');
+        } else {
+            document.getElementById("res").innerText = " không có trong dãy.";
+        }
+    }
+</script>
+</body>
+</html>

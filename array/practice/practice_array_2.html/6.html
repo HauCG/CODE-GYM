@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )</title>
+</head>
+<body>
+<input type="text" id="arr" placeholder="Nhập dãy ">
+<input type="button" value="kiểm tra" onclick="check()">
+<script>
+    function check() {
+
+        let array = document.getElementById("arr").value.split('');
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === "-") {
+                array[i] = " _ ";
+            }
+        }
+        document.write(array.join(''));
+    }
+</script>
+</body>
+</html>

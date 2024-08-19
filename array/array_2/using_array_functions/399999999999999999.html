@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa.
+        Ví dụ: nếu bạn nhập vào chuỗi 'The Quick Brown Fox' kết quả của chương trình là 'tHE qUICK bROWN fOX'.</title>
+</head>
+<body>
+<input type="text" id="text" placeholder="Nhập chữ cần đảo ngược ">
+<input type="button" onclick="changeAndDisplay()" value="Đảo ngược">
+<p id="result"></p>
+<script>
+    function changeAndDisplay() {
+        var input = document.getElementById("text").value;
+        let downerWord = ["A", "B", "C", "D", "E", "G", "H", "I", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "X", "Y"];
+        let upperWord = ["a", "b", "c", "d", "e", "g", "h", "i", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y"];
+        var kq = '';
+        let arr = "";
+        upperWord.forEach((item, index) => {
+            if (item === input) {
+                kq = downerWord[index];
+                arr += kq;
+            }
+        });
+            document.getElementById('result').innerText = arr;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.</title>
+</head>
+<body>
+<input type="text" id="arr1" placeholder="Nhập dãy 1">
+<input type="text" id="arr2" placeholder="Nhập dãy 2">
+<input type="button" value="Kiểm tra" onclick="check()">
+<script>
+    function check() {
+        let array1 = document.getElementById("arr1").value.split(",");
+        let array2 = document.getElementById("arr2").value.split(",");
+        let count = 0;
+        if (array1.length === array2.length) {
+            for (let i = 0; i < array1.length; i++) {
+                if (array1[i] === array2[i]) {
+                    count++;
+                }
+            }
+            if (count === array1.length) {
+                document.write("Hai dãy giong nhau !");
+            } else {
+                document.write("Hai dãy ko giong nhau !");
+            }
+        } else {
+            document.write("Hai dãy ko giong nhau !");
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find number in the array</title>
+</head>
+<body>
+<script>
+    let num = +prompt("Nhập số cần tìm trong dãy [-3,5,1,3,2,10]");
+    let array =  [-3,5,1,3,2,10];
+    let found = false;
+    let count = 0;
+    for (let i = 0; i <= array.length ; i++) {
+        if (num === array[i]) {
+            let result = i + 1;
+            found = true ;
+            alert("Số " + num + " ở trong dãy " + " ở vị trí thứ " + result);
+        }
+    }
+    if (!found) {
+        alert("Ko co trong day!");
+    }
+</script>
+</body>
+</html>

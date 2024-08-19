@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.
+      Chương trình tìm xem V có nằm trong mảng số nguyên không?
+      Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".</title>
+</head>
+<body>
+<input type="text" id="arr" placeholder="Nhập dãy" >
+<input type="text" id="num" placeholder="Nhập số" >
+<input type="button" onclick="check()" value="Kiem tra">
+<script>
+  function check() {
+    let array = document.getElementById("arr").value.split(',').map(Number);
+    let num = document.getElementById("num").value;
+    let count = 0 ;
+    for (let i = 0; i < array.length; i++) {
+      if (num == array[i]) {
+        alert("Số có trong dãy");
+        count++;
+        break;
+      } else {
+        alert("Số ko có trong dãy");
+        break;
+      }
+    }
+  }
+</script>
+</body>
+</html>

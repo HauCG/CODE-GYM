@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo/nhập vào một mảng
+        số nguyên và đảo ngược các phần tử trong mảng đó.</title>
+</head>
+<body>
+<input type="text" id="arr" placeholder="Nhập dãy" onchange="showOp()">
+<p id="res"></p>
+<script>
+    function showOp() {
+    let array = document.getElementById("arr").value.split(',').map(Number);
+        for (let i = 0; i < array.length/2; i++) {
+            let a = array[i];
+            array[i] = array[array.length - i - 1];
+            array[array.length - i - 1] = a;
+        }
+        document.getElementById("res").innerText = array;
+    }
+</script>
+
+</body>
+</html>

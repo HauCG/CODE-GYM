@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một chương trình để đếm số từ trong một chuỗi</title>
+</head>
+<body>
+<input type="text" id="arr" placeholder="Nhap day">
+<input type="button" value="Đếm từ" onclick="countWords()">
+<script>
+    function countWords() {
+        let count = 0;
+        let array = document.getElementById("arr").value.split(" ");
+        for (let i = 0; i < array.length; i++) {
+            if (isNaN(array[i])) {
+                count++;
+            }
+        }
+        document.write(count);
+    }
+</script>
+</body>
+</html>
