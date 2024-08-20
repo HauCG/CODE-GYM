@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm các hàm alert() vào những vị trí thích hợp trong đoạn mã sau để bạn có thể nhìn thấy giá trị của biến result trước và sau lời gọi hàm. Đoạn mã có dạng như sau:
+        function addNumbers() {
+        firstNum = 4;
+        secondNum = 8;
+        result = firstNum + secondNum;
+        return result;
+        }
+        result = 0;
+        result = addNumbers(); </title>
+</head>
+<body>
+<input type="button" value="Kết quả trước" onclick="hienKQtruoc()">
+<input type="button" value="Kết quả sau" onclick="hienKQsau()">
+<script>
+    let firstNum = 4;
+    let secondNum = 8;
+    let result = 0;
+    function hienKQtruoc() {
+        alert(result);
+    }
+    function hienKQsau() {
+        result = firstNum + secondNum;
+        alert(result);
+    }
+</script>
+</body>
+</html>

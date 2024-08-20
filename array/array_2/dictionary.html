@@ -1,11 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Từ điển:
-        Tạo 2 mảng có độ dài bằng nhau để lưu trữ danh sách các từ. Mảng 1 lưu trữ các từ tiếng Anh, mảng 2 lưu trữ các từ tiếng Việt tương ứng.
-        Khi tìm kiếm, tìm vị trí của từ tiếng Anh trong mảng 1. Nếu tìm thấy thì hiển thị từ tiếng Việt ở cùng vị trí trong mảng 2.
+        Tạo 2 mảng có độ dài bằng nhau để lưu trữ danh sách các từ. Mảng 1 lưu trữ các từ tiếng Anh, mảng 2 lưu trữ các
+        từ tiếng Việt tương ứng.
+        Khi tìm kiếm, tìm vị trí của từ tiếng Anh trong mảng 1. Nếu tìm thấy thì hiển thị từ tiếng Việt ở cùng vị trí
+        trong mảng 2.
         Nếu không tìm thấy thì hiển thị thông báo không tìm thấy.</title>
 </head>
 <body>
@@ -13,19 +14,36 @@
 <input type="button" onclick="translateDictionary()" value="Dịch">
 <p id="res"></p>
 <script>
+
+
     function translateDictionary() {
         let array1 = [1, 2, 3, 4];
         let array2 = ["một", "hai", "ba", "bốn"];
-        let result = "không tìm thấy";
-        let word = document.getElementById("word").value;
+        let res = "Sao gì nghe lạ vậy cu :V";
+        let find = parseInt(document.getElementById("word").value);
         for (let i = 0; i < array1.length; i++) {
-            if (word == array1[i]) {
-                result = array2[i];
+            if (array1.includes(find)) {
+                res = array2[array1.indexOf(find)];
                 break;
             }
         }
-        document.getElementById("res").innerText = result;
+        alert(res);
     }
+
 </script>
 </body>
 </html>
+
+// function translateDictionary() {
+//     let array1 = [1, 2, 3, 4];
+//     let array2 = ["một", "hai", "ba", "bốn"];
+//     let result = "không tìm thấy";
+//     let word = document.getElementById("word").value;
+//     for (let i = 0; i < array1.length; i++) {
+//         if (word == array1[i]) {
+//             result = array2[i];
+//             break;
+//         }
+//     }
+//     document.getElementById("res").innerText = result;
+// }

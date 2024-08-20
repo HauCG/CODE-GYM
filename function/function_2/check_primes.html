@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>checkPrime</title>
+</head>
+<body>
+<input type="number" id="num" placeholder="Nhập số">
+<input type="button" value="Kiểm tra" onclick="showAns()">
+<script>
+    function checkPrime(num) {
+        if (num < 2) return false;
+        for (let i = 2; i < num / 2; i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    function showAns() {
+        let number = document.getElementById("num").value;
+        if (checkPrime(number)) {
+            alert("Số nguyên tố");
+        } else {
+            alert("Không phải số nguyên tố");
+        }
+    }
+</script>
+</body>
+</html>
