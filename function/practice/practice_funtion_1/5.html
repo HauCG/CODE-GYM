@@ -11,18 +11,29 @@
         Đừng quên xử lý trong trường hợp không tìm thấy ngôi sao nào. Cho kết quả hiển thị trên màn hình.</title>
 </head>
 <body>
+<p>Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe và Regulus</p>
+<input type="text" id="keyy" placeholder="Nhập sao">
+<input type="button" value="Xem sao" onclick="showBigStar()">
+<p id="res"></p>
 <script>
-    let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" , "Regulus"];
-    let arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
-    let text = prompt("Nhập ngôi sao cần tìm chòm : Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe và Regulus ");
-    for (let i = 0; i < arr1.length; i++) {
-        if (arr1.includes(text)) {
-            alert(arr2[arr1.indexOf(text)]);
-            break;
+    function indexStar(arr, key) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === key) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    function showBigStar() {
+        let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let arr2 = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        let key = document.getElementById("keyy").value;
+        let index = indexStar(arr1, key);
+        if (index !== -1) {
+            document.getElementById("res").innerText = arr2[index];
         } else {
-            alert("Sao gì nghe lạ vậy cu :V");
+            document.getElementById("res").innerText = "Không biết sao này";
         }
     }
 </script>
-</body>
-</html>

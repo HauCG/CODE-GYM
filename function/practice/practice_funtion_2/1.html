@@ -5,6 +5,14 @@
     <title>Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</title>
 </head>
 <body>
-<input type="number" id="num">
+<input type="number" id="num" placeholder="Nhập số :">
+<input type="button" value="tinh " onclick="caculatorSquare()">
+<script>
+    function caculatorSquare() {
+        let number = document.getElementById("num").value;
+        let square = number * number ;
+        document.write(square);
+    }
+</script>
 </body>
 </html>

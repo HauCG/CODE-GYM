@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let circle = function (radius) {
+        this.radius = radius;
+        this.getRadius = function () {
+            return radius;
+        }
+        this.getArea = function () {
+            return radius * Math.PI * radius;
+        }
+    }
+    let circle1 = new circle(2);
+    let radius = circle1.getRadius();
+    let area = circle1.getArea();
+    alert("bán kính là: " + radius + ", diện tích là: "  + area);
+</script>
+</body>
+</html>

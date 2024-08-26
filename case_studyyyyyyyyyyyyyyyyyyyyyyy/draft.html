@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nháp</title>
+</head>
+<body>
+<canvas id="can" width="500" height="500" style="border: 1px solid grey"></canvas>
+<input type="button" onclick="showGoldDigger()" value="Hiện ảnh">
+
+<script>
+    function showGoldDigger() {
+        const canvas = document.getElementById('can');
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+        img.src = "img/gold_digger.png";
+        img.onload = function () {
+            ctx.drawImage(img, 50, 50, 50, 50);
+        };
+    }
+</script>
+</body>
+</html>

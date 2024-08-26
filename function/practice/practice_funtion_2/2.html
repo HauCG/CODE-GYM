@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được</title>
+</head>
+<body>
+<input type="number" id="bankinh" placeholder="Nhap ban kinh" oninput="tinhChuViDienTich()" >
+<script>
+    function tinhChuViDienTich() {
+        let r = document.getElementById("bankinh").value;
+        let chuVi =  3.14 * 2 * r;
+        let dienTich = 3.14 * r * r ;
+        document.write("Chu vi hình là : " + chuVi + ". Diện tích của hình là : " + dienTich );
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.</title>
+</head>
+<body>
+<input type="text" placeholder="Nhập dãy" id="array">
+<input type="button" value="Đảo ngược" onclick="daoNguocc()">
+<script>function daoNguocc() {
+    let arr = document.getElementById("array").value.split(",").map(Number);
+    for (let i = 0; i < arr.length / 2; i++) {
+        let d = arr[i];
+        arr[i] = arr[arr.length - i - 1];
+        arr[arr.length - i - 1] = d;
+    }
+    document.write(arr);
+}
+</script>
+</body>
+</html>

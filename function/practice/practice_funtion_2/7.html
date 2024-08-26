@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</title>
+</head>
+<body>
+<input type="text" id="s" placeholder="Nhập số cách nhau bởi dấu ,">
+<input type="button" value="Đổi chỗ" onclick="doiCho()">
+<script>
+    function doiCho() {
+        let n = document.getElementById("s").value.split(',').map(Number);
+        let c = n[1];
+        n[1] = n[0];
+        n[0] = c;
+        document.write(n);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>ADD NEW PRODUCT</p>
+<input type="text" placeholder="New product" id="newProduct">
+<input type="button" value="ADD" onclick="addProduct()" style="background-color: green; color: white">
+
+<table id="productTable">
+    <tr>
+        <th>Product Name</th>
+        <th>Actions</th>
+    </tr>
+</table>
+
+<script>
+    let dataArray = [
+        ["Sony Xperia"],
+        ["Nokia"]
+    ];
+
+    function renderTable() {
+        const table = document.getElementById("productTable");
+        // Clear existing rows (except the header)
+        table.innerHTML = `
+                <tr>
+                    <th>Product Name</th>
+                    <th>Actions</th>
+                </tr>
+            `;
+        // Add rows from dataArray
+        dataArray.forEach((product, index) => {
+            const row = table.insertRow();
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            cell1.textContent = product[0];
+            cell2.innerHTML = `
+                    <button onClick="editProduct(${index})">Edit</button>
+                    <button onClick="deleteProduct(${index})">Delete</button>
+                `;
+        });
+    }
+
+    function addProduct() {
+        const newProduct = document.getElementById("newProduct").value.trim();
+        if (newProduct) {
+            dataArray.push([newProduct]);
+            renderTable();
+            document.getElementById("newProduct").value = ""; // Clear the input field
+        } else {
+            alert("Please enter a product name.");
+        }
+    }
+
+
+    function editProduct(index) {
+        const newName = prompt("Edit the product name:", dataArray[index][0]);
+        if (newName !== null && newName.trim() !== "") {
+            dataArray[index][0] = newName.trim();
+            renderTable();
+        }
+    }
+
+    function deleteProduct(index) {
+        dataArray.splice(index, 1);
+        renderTable();
+    }
+
+    // Initial render
+    renderTable();
+</script>
+</body>
+</html>

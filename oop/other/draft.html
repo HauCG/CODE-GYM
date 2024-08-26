@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="DemoCanvas" width="100" height="200" style="border: 1px solid"></canvas>
+<script>
+    class hinhCn {
+        chieudai;
+        chieurong;
+
+        constructor(chieudai, chieurong) {
+            this.chieudai = chieudai;
+            this.chieurong = chieurong;
+        }
+
+        getChieudai() {
+            return this.chieudai;
+        }
+
+        getChieurong() {
+            return this.chieurong;
+        }
+
+        getChuvi() {
+            return (this.chieudai + this.chieurong) * 2;
+        }
+
+        getDientich() {
+            return this.chieudai * this.chieurong
+        }
+
+        setChieudai(chieudai) {
+            this.chieudai = chieudai;
+        }
+
+        setChieurong(chieurong) {
+            this.chieurong = chieurong;
+        }
+    }
+
+    let HCN = new hinhCn(3, 5);
+
+    HCN.setChieudai(200);
+    HCN.setChieurong(10);
+
+    let dienTich = HCN.getDientich();
+    let chuVi = HCN.getChuvi();
+    let width = HCN.getChieurong();
+    let height = HCN.getChieudai();
+
+    document.write("dien tich HCN la: " + dienTich + "  ")
+    document.write("chu vi HCN la: " + chuVi)
+
+    let canvas = document.getElementById("DemoCanvas");
+    let ctx = canvas.getContext('2d');
+    ctx.fillStyle='#fa4b2a';
+    ctx.fillRect(15, 15, height, width);
+
+
+</script>
+
+</body>
+</html>

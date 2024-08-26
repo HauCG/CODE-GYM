@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="pic" height="1000" width="2000" style="border: 1px solid black"></canvas>
+<script>
+    function Circle(x,y,radius) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+    }
+
+    function getRandomHex() {
+        return Math.floor(Math.random()*255);
+    }
+    function createCircle() {
+        let ctx = document.getElementById("pic").getContext("2d");
+        let radius = Math.floor(Math.random() * 80);
+        let circle = new Circle(500, 500, radius);//độ dài cao của tọa độ, và bán kính
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+    createCircle()
+
+</script>
+</body>
+</html>

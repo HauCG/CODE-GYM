@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>talk your name</title>
+</head>
+<body>
+<script>
+    function Person(first, last, age, gender, interests) {
+        this.first = first;
+        this.last = last;
+        this.age = age;
+        this.gender = gender;
+        this.interests  = interests;
+        this.bio = function () {
+            alert("My name is: " + first + " " + last + ". I am a" + gender + " and " + age + " years old" + ". I love " + interests);
+        }
+        this.greeding = function () {
+            alert("Hello. My name is " + first + " " + last  );
+        }
+    }
+var tui =  new Person("Mai", "Hậu", "22", "Nam", "myLove");
+tui.greeding();
+tui.bio();
+
+
+</script>
+
+</body>
+</html>

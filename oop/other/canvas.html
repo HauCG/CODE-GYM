@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCan" width="500" height="500" style="border:1px solid red "></canvas>
+<script>
+    let mCan = document.getElementById("myCan");
+    let ctx = mCan.getContext("2d"); // lấy ngữ cảnh làm việc trên môi trường 2d
+    ctx.beginPath(); // bắt đầu một nét vẽ
+    // ctx.closePath();  kết thúc nét vẽ
+
+    ctx.arc(95,50,40,0,2*Math.PI,false); // vẽ hình tròn (chiều ngang tâm đgtron , chiều dọc tâm đgtron, bán kính đgtron , góc bắt đầu
+    // , vị trí bắt đầu từ 0 đến 2, vẽ bao nhiêu độ 0 đến 2pi , true thì vẽ theo chiều kim đồng hồ,  nếu là false hoặc ko có thì ngược chiều kim đồng hồ)
+    ctx.stroke(); // vẽ lại đường viền
+
+    ctx.font = "30px Arial"; // độ lớn chữ và font chữ
+    ctx.fillText("fill text ví dụ",200,50); // vẽ chữ đủ màu  (chiều ngang , chiều dọc)
+    ctx.strokeText(" stroke text ví dụ", 200, 80); // vẽ chữ rỗng màu (chiều ngang , chiều dọc)
+
+
+    // tạo hiệu ứng gradient
+    var grd = ctx.createLinearGradient(0,100,200,120); //khai báo một grd HÌNH CHỮ NHẬT có điểm bắt đầu và kết thúc của hiệu ứng với chiều dọc và chiều ngang là của canvas
+    //(0,100 là tọa dộ bắt đầu trong đó : 0 là ngang , 100 là chiều dọc)
+    //(200,120 là tọa dộ kết thúc trong đó : 200 là ngang , 120 là chiều dọc)
+
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+    // 0 và 1 là điểm bắt đầu màu và kết thúc màu , bắt đầu với màu đỏ và kết thúc với màu trắng
+
+    // Fill with gradient
+    ctx.fillStyle = grd; //gán thuộc tính tô full màu cho ctx
+    ctx.fillRect(50,100,150,80); // vẽ một hình chữ nhật tại vị trí (50, 100) với chiều rộng 150 pixel và chiều cao 80 pixel, dựa vào thuộc tính grd ở trên
+
+
+
+</script>
+</body>
+</html>

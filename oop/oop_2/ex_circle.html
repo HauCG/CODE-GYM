@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>draw cỉrcle</title>
+</head>
+<body>
+<canvas id="myCan" height="500" width="500" style="border: 1px solid black"></canvas>
+<script>
+function Circle(radius, color) {
+    this.radius = radius;
+    this.color = color;
+    this.getRadius = function () {
+        return this.radius;
+    };
+    this.getColor = function () {
+        return this.color;
+    };
+    this.getArea = function () {
+        return this.radius * this.radius * Math.PI;
+    }
+}
+
+var circle1 = new Circle(1,"black");
+document.write(circle1.getArea());
+</script>
+</body>
+</html>

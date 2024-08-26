@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>khởi tạo lớp và khai báo đối tượng</title>
+</head>
+<body>
+<script>
+    function Person(first, last,age, eye ) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+        //this khai báo thuộc tính
+
+        //khai báo hàm đổi tên
+        this.changeName = function (name) {
+            this.lastName = name;
+        };
+
+
+    }
+    // khai báo đối tượng mới
+    var myFather = new Person("Son", "Mai", 52, "black");
+    var myMother = new Person("Khai", "Mai", 51, "black");
+    document.write(myMother.lastName);
+
+
+    //đổi tên mẹ
+    myMother.changeName("door");
+    document.write(myMother.lastName);
+</script>
+</body>
+</html>

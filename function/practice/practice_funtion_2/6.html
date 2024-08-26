@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không.
+        Nếu là nguyên dương trả về true, ngược lại trả về false.</title>
+</head>
+<body>
+<input type="text" id="shit" placeholder="NHập" >
+<input type="button" onclick="check()" value="Kiểm tra">
+<script>
+    function check() {
+        let n = document.getElementById("shit").value;
+        let check = false;
+        if (n <= 0 ){
+            document.write(check);
+        } else {
+            document.write(!check);
+        }
+    }
+</script>
+</body>
+</html>

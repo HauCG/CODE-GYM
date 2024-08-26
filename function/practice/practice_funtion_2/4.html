@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không.
+        Nếu là ký tự số hàm trả về true, ngược lại trả về false.</title>
+</head>
+<body>
+<input type="text" placeholder="Nhập" id="check" oninput="checkNumber()">
+<script>
+    function checkNumber() {
+        let n = document.getElementById("check").value;
+        let checkNumber = false;
+        if(isNaN(n)){
+            document.write(checkNumber);
+        } else {
+            document.write(!checkNumber);
+        }
+    }
+</script>
+</body>
+</html>

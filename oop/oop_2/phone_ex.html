@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sent phone mes</title>
+</head>
+<body>
+<script>
+    function Phone(id, name) {
+        this.id = id;
+        this.name = name;
+        this.message = "";
+        this.setMessage = function (message) {
+            this.message = message;
+        };
+        this.getMessage = function () {
+            return this.message;
+        };
+        this.sendMessage = function (message, mobile) {
+            mobile.setMessage(message);
+        };
+    }
+    var iphone = new Phone(1, "Iphone");
+    var samsung = new Phone(2, "Samsung");
+    iphone.sendMessage("mes form iphone", samsung);
+    document.write(samsung.getMessage());
+</script>
+</body>
+</html>

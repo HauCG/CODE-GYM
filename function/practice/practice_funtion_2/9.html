@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng
+        không.
+        Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. </title>
+</head>
+<body>
+<input type="text" id="array" placeholder="Nhập dãy">
+<input type="text" id="so" placeholder="Nhập số">
+<input type="button" value="Kiểm tra" onclick="check()">
+<SCRIPT>
+    function check() {
+        let arr = document.getElementById("array").value.split(",").map(Number);
+        let num = document.getElementById("so").value;
+        let res = "-1";
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == num){
+                res = arr[i];
+                break;
+            }
+        }
+        alert(res);
+    }
+
+</SCRIPT>
+</body>
+</html>

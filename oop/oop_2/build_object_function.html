@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>build_object_function</title>
+</head>
+<body>
+<script>
+    var person1 = new Object({
+        name : "hau",
+        age : 20,
+        greeting : function () {
+            alert("toi ten la: " + this.name + " ," + this.age + " tuoi" );
+        }
+    })
+    // document.write(person1.name);
+    person1.greeting();
+</script>
+</body>
+</html>

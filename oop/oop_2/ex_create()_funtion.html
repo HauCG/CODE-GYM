@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ex_create()_funtion</title>
+</head>
+<body>
+<script>
+    function Person(name,age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    function createName(name, age) {
+        return {name: name, age: age};
+    }
+    var hau = new Person("Hậu", "10" );
+    var kien = createName('Kiên', "12");
+    document.write(kien.name + " " + kien.age + "<br>");
+    document.write(hau.name +  "  " + hau.age);
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>build_date</title>
+</head>
+<body>
+<script>
+    function myDear(year, month, day, hours, minutes, seconds, milliseconds) {
+        this.year = year;
+        this.month = month;
+        this.day = day;
+        this.hours = hours;
+        this.minutes = minutes;
+        this.seconds = seconds;
+        this.milliseconds = milliseconds ;
+        this.getDay = function () {
+            return this.day;
+        }
+        this.getYear = function () {
+            return this.year;
+        }
+    }
+    var date1 = new myDear(2024, 8, 26, 10, 32, 30, 50);
+document.write(date1.getDay() + "  " + date1.getYear());
+</script>
+</body>
+</html>

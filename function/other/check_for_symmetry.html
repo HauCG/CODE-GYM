@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra đối xứng  ví dụ level là đối xứng</title>
+</head>
+<body>
+<input type="text" id="string" placeholder="Nhập chuỗi cần kiểm tra">
+<input type="button" value="Kiểm tra" onclick="isPalindrome()">
+<script>
+    function isPalindrome() {
+        let array = document.getElementById("string").value;
+        let count = 0;
+        if (array[array.length-1] === array[0]) {
+            for (let i = 0; i < array.length/2; i++) {
+                if (array[i] === array[array.length-1-i]){
+                    count = 0;
+                } else {
+                    count ++;
+                }
+            } if (count === 0) {
+                document.write("true");
+            } else {
+                document.write("false");
+            }
+        } else {
+            document.write("false");
+        }
+    }
+</script>
+</body>
+</html>
