@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hobo Game</title>
+</head>
+<body>
+<canvas id="Game" width="2000" height="1000" style="border: 1px solid black"></canvas>
+<script>
+    class Character {
+        constructor(imgSrc, x, y, h, w, speed = 0, maxHealth = 100, health = 100) {
+            this.img = new Image();
+            this.img.src = imgSrc;
+            this.x = x;
+            this.y = y;
+            this.h = h;
+            this.w = w;
+            this.speed = speed;
+            this.canvas = document.getElementById("Game");
+            this.ctx = this.canvas.getContext('2d');
+            this.maxHealth = maxHealth;
+            this.health = health;
+            this.healthBarLength = w;
+
+            this.img.onload = () => {
+                this.drawImg();
+            };
+        }
+
+        drawImg() {
+            this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
+        }
+
+        moveLeft() {
+            if (this.x - this.speed >= 0) {
+                this.x -= this.speed;
+                this.update();
+            }
+        }
+
+        moveRight() {
+            if (this.x + this.w + this.speed <= this.canvas.width) {
+                this.x += this.speed;
+                this.update();
+            }
+        }
+
+        moveTop() {
+            if (this.y - this.speed - 150 >= 0) {
+                this.y -= this.speed;
+                this.update();
+            }
+        }
+
+        moveDown() {
+            if (this.y + this.h + this.speed <= this.canvas.height) {
+                this.y += this.speed;
+                this.update();
+            }
+        }
+
+        // imgSrc, x, y, h, w,
+        erase() {
+            this.ctx.clearRect(this.x, this.y, this.w, this.h);
+        }
+
+        update() {
+            this.erase();
+            this.drawImg();
+        }
+
+        updateHealth(newHealth) {
+            this.health = newHealth;
+            this.w = (this.health / this.maxHealth) * this.healthBarLength;
+            this.erase();
+            this.drawImg();
+        }
+
+    }
+
+    // function movediv(timestamp) {
+    //     if (timestamp - lastFrameTime >= frameDelay) {
+    //         getCloseToHobo(enemy1, hobo);
+    //         drawAllCharacters();
+    //         lastFrameTime = timestamp;
+    //     }
+    //     requestAnimationFrame(movediv);
+    // }
+    // imgSrc, x, y, h, w, speed = 0, maxHealth = 100, health = 100
+    let background = new Character('background.png', 0, 0, 1000, 2000);
+    let hoboBloodBar = new Character('BloodBar.png', 285, 234, 15, 172, 0, 300, 300);
+    let enemyBloodBar = new Character('BloodBar.png', 1530, 234, 15, 172, 0, 300, 300);
+    let hobo = new Character('Hobo.png', 100, 500, 200, 200, 50);
+    let enemy1 = new Character('Enemy1.png', 500, 500, 200, 200, 5, 20);
+    let ball = new Character("ball.png", hobo.x, hobo.y, 150, 250, 5, 100);
+
+
+    function endGame() {
+        alert("bạn thua");
+    }
+
+    function getCloseToHobo(enemy, hoboLocation) {
+        let distance = Math.sqrt(Math.pow(enemy.x - hoboLocation.x, 2) + Math.pow(enemy.y - hoboLocation.y, 2));
+        // cách nhau 150 thì đi đến gần
+        if (distance >= 150) {
+            if (enemy.x < hoboLocation.x) {
+                enemy.moveRight();
+            } else if (enemy.x > hoboLocation.x) {
+                enemy.moveLeft();
+            }
+            if (enemy.y < hoboLocation.y) {
+                enemy.moveDown();
+            } else if (enemy.y > hoboLocation.y) {
+                enemy.moveTop();
+            }
+        } else {
+            // cách nhau gần hơn 150 thì đá hobo ra chiều ngược lại và trừ máu hobo
+            if (enemy.x > hoboLocation.x) {
+                if (hoboBloodBar.health > 0) {
+                    hoboLocation.moveLeft();
+                    hoboBloodBar.updateHealth(hoboBloodBar.health - 10);
+                } else {
+                    endGame();
+                }
+            } else if (enemy.x < hoboLocation.x) {
+                if (hoboBloodBar.health > 0) {
+                    hoboLocation.moveRight();
+                    hoboBloodBar.updateHealth(hoboBloodBar.health - 10);
+                } else {
+                    endGame();
+                }
+                if (enemy.y > hoboLocation.y) {
+                    if (hoboBloodBar.health > 0) {
+                        hoboLocation.moveTop();
+                        hoboBloodBar.updateHealth(hoboBloodBar.health - 10);
+                    } else {
+                        endGame();
+                    }
+                } else if (enemy.y < hoboLocation.y) {
+                    if (hoboBloodBar.health > 0) {
+                        hoboLocation.moveDown();
+                        hoboBloodBar.updateHealth(hoboBloodBar.health - 10);
+                    } else {
+                        endGame();
+                    }
+                }
+            }
+        }
+    }
+
+    document.addEventListener('keydown', function (event) {
+        switch (event.key) {
+            case '1':
+                ball.drawImg();
+                ball.moveRight();
+                break;
+            case '2':
+                alert("2");
+                break;
+            case '3':
+                alert("3");
+                break;
+        }
+    });
+
+    function drawAllCharacters() {
+        background.drawImg();
+        hoboBloodBar.updateHealth(hoboBloodBar.health);
+        enemyBloodBar.drawImg();
+        hobo.drawImg();
+        enemy1.drawImg();
+    }
+
+
+    drawAllCharacters();
+    // requestAnimationFrame(movediv);
+
+    setInterval(() => {
+        getCloseToHobo(enemy1, hobo);
+        drawAllCharacters();
+    }, 50);
+
+    document.addEventListener('keydown', function (event) {
+        let hoboMoved = false; // kiểm tra xem hobbo có di chuyển ko
+        switch (event.key) {
+            case 'w':
+                hobo.moveTop();
+                hoboMoved = true;
+                break;
+            case 's':
+                hobo.moveDown();
+                hoboMoved = true;
+                break;
+            case 'a':
+                hobo.moveLeft();
+                hoboMoved = true;
+                break;
+            case 'd':
+                hobo.moveRight();
+                hoboMoved = true;
+                break;
+        }
+        if (hoboMoved) {
+            drawAllCharacters(); // chỉ vẽ lại nếu hobo move
+        }
+    });
+
+    hoboBloodBar.updateHealth(300);
+
+</script>
+</body>
+</html>

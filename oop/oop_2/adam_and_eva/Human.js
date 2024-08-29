@@ -1,10 +1,26 @@
-function Human(name, gender, weight) {
-    this.name = name;
-    this.gender = gender;
-    this.weight = weight;
+class Human {
+    constructor(name, gender, weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+    }
 
-    this.isMale = function () {
-        return this.isMale ? "Nam" : "Nu";
-    };
-    this.
+    talking() {
+        console.log("hello");
+    }
+
+    getWeightAfterEatingApple() {
+        this.weight++;
+    }
+
+    eatingApple(apple) {
+        if (apple.getWeight() > 0) {
+            apple.getEaten();
+            this.getWeightAfterEatingApple();
+        }
+    }
+
+    checkAppleWeight(apple) {
+        console.log(apple.getWeight());
+    }
 }
